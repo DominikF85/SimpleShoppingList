@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("SimpleShoppingList.Droid.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("DF.ShoppingList.Droid.Resource", IsApplication=true)]
 
-namespace SimpleShoppingList.Droid
+namespace DF.ShoppingList.Droid
 {
 	
 	
@@ -26,7 +26,7 @@ namespace SimpleShoppingList.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::SimpleShoppingList.Droid.Resource.Attribute.actionBarSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::DF.ShoppingList.Droid.Resource.Attribute.actionBarSize;
 		}
 		
 		public partial class Animation

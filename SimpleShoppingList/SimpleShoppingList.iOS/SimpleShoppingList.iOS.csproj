@@ -8,7 +8,7 @@
     <ProjectGuid>{61FC1A20-A5FF-4427-B9B1-191C9CCB8816}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SimpleShoppingList.iOS</RootNamespace>
+    <RootNamespace>DF.ShoppingList.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>SimpleShoppingList.iOS</AssemblyName>
     <NuGetPackageImportStamp>

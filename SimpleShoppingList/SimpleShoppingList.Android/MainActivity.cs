@@ -6,8 +6,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using DF.ShoppingList.Droid;
 
-namespace SimpleShoppingList.Droid
+namespace DF.ShoppingList.Droid
 {
     [Activity(Label = "SimpleShoppingList", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
@@ -20,7 +21,7 @@ namespace SimpleShoppingList.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            LoadApplication(new App());
+            LoadApplication(new DF.ShoppingList.App());
         }
     }
 }
