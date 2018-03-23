@@ -8,7 +8,8 @@
     <ListView x:Name="ShoppingListsListView"
               SeparatorVisibility="None"
               HasUnevenRows="true"
-              ItemsSource="{Binding ShoppingListManager.ShoppingLists}">
+              ItemsSource="{Binding ShoppingListManager.ShoppingLists}"
+              SelectedItem="{Binding SelectedList}">
       <ListView.Header>
         <Label BackgroundColor="CornflowerBlue"
               Grid.Column="1"

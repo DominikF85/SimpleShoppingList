@@ -5,6 +5,8 @@ namespace ShoppingListVM
 {
   public class ShoppingListAppMainVM : NPCBase
   {
+    private ShoppingListVM _selectedList;
+
     public ShoppingListAppMainVM()
     {
       var db = new ShoppingListDB();
@@ -14,5 +16,11 @@ namespace ShoppingListVM
     public string AppTitle { get; } = "ShoppingListApp";
 
     public ShoppingListManager ShoppingListManager { get; }
+
+    public ShoppingListVM SelectedList
+    {
+      get { return _selectedList; }
+      set { SetProperty(ref _selectedList, value); }
+    }
   }
 }
