@@ -5,9 +5,9 @@ namespace DF.ShoppingList.DataModel.Contracts
 {
     public interface IShoppingList
     {
-        string Name { get; }
+        string Name { get; set; }
 
-        DateTime ScheduledDate { get; }
+        DateTime ScheduledDate { get; set; }
 
         ICollection<IShoppingItem> Items { get; }
     }

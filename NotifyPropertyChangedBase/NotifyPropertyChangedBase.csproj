@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\..\..\..\..\CVS_Work\dotnet\Combivis_Net\+KEBGeneralUtils\NotifyPropertyChanged\INotifyPropertyChangedExtendable.cs" Link="INotifyPropertyChangedExtendable.cs" />
+    <Compile Include="..\..\..\..\..\..\CVS_Work\dotnet\Combivis_Net\+KEBGeneralUtils\NotifyPropertyChanged\INPCBase.cs" Link="INPCBase.cs" />
+    <Compile Include="..\..\..\..\..\..\CVS_Work\dotnet\Combivis_Net\+KEBGeneralUtils\NotifyPropertyChanged\NotifyPropertyChangedExtensions.cs" Link="NotifyPropertyChangedExtensions.cs" />
+    <Compile Include="..\..\..\..\..\..\CVS_Work\dotnet\Combivis_Net\+KEBGeneralUtils\NotifyPropertyChanged\NPCBase.cs" Link="NPCBase.cs" />
+  </ItemGroup>
+
+</Project>
