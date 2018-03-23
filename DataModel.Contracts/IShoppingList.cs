@@ -9,8 +9,6 @@ namespace DF.ShoppingList.DataModel.Contracts
 
         DateTime ScheduledDate { get; }
 
-        IStore Store { get; }
-
         ICollection<IShoppingItem> Items { get; }
     }
 }
