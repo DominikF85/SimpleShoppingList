@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataModel.Contracts\DataModel.Contracts.csproj" />
+    <ProjectReference Include="..\DataModel.SQLite\DataModel.SQLite.csproj" />
     <ProjectReference Include="..\NotifyPropertyChangedBase\NotifyPropertyChangedBase.csproj" />
   </ItemGroup>
 

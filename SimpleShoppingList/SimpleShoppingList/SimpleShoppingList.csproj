@@ -10,11 +10,31 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\DataModel.SQLite\DataModel.SQLite.csproj" />
+    <ProjectReference Include="..\..\ShoppingListVM\ShoppingListVM.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="App.xaml.cs">
       <DependentUpon>*.xaml</DependentUpon>
     </Compile>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="MainPage.xaml.cs">
-      <DependentUpon>*.xaml</DependentUpon>
+    <Compile Update="MainMenuMasterDetailPageMenuItem.cs">
+      <SubType>Code</SubType>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="MainMenuMasterDetailPageDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MainPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MainPageDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MainPageMaster.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

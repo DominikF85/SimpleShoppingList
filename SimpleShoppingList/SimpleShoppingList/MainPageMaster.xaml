@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DF.ShoppingList.MainPageMaster"
+             Title="Master">
+  <StackLayout>
+    <Button Text="+"/>
+    <ListView x:Name="ShoppingListsListView"
+              SeparatorVisibility="None"
+              HasUnevenRows="true"
+              ItemsSource="{Binding ShoppingListManager.ShoppingLists}">
+      <ListView.Header>
+        <Label BackgroundColor="CornflowerBlue"
+              Grid.Column="1"
+              Grid.Row="2"
+              Text="Shopping lists:"
+              Style="{DynamicResource SubtitleStyle}"/>
+      </ListView.Header>
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand">
+              <Label VerticalOptions="FillAndExpand" 
+                    VerticalTextAlignment="Center" 
+                    Text="{Binding Name}" 
+                    FontSize="24"/>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>
