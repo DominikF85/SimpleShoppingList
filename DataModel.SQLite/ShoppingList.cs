@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using DF.ShoppingList.DataModel.Contracts;
 using SQLite;
 
-namespace DataModel.SQLiteX
+namespace DataModel.SQLite
 {
   public class ShoppingList : IShoppingList
   {
@@ -19,7 +19,7 @@ namespace DataModel.SQLiteX
     public DateTime ScheduledDate { get; set; }
 
     [Ignore]
-    public ICollection<IShoppingItem> Items { get; }
+    public ICollection<IShoppingItem> Items { get; set; }
 
     #endregion
   }

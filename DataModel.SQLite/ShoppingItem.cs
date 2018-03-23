@@ -1,6 +1,6 @@
 ﻿using DF.ShoppingList.DataModel.Contracts;
 
-namespace DataModel.SQLiteX
+namespace DataModel.SQLite
 {
   public class ShoppingItem : IShoppingItem
   {
