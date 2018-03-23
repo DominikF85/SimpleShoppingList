@@ -17,6 +17,7 @@ namespace ShoppingListVM
 
     private void initLists()
     {
+      _dataBase.Load();
       ShoppingLists = new ObservableCollection<ShoppingListVM>(_dataBase.ShoppingLists.Select(dbList => new ShoppingListVM(dbList)));
     }
 

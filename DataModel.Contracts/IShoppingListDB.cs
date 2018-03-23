@@ -1,9 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
 
 namespace DF.ShoppingList.DataModel.Contracts
 {
-    public interface IShoppingListDB
-    {
-        ICollection<IShoppingList> ShoppingLists { get; }
-    }
+  public interface IShoppingListDB
+  {
+    IQueryable<IShoppingList> ShoppingLists { get; }
+
+    void Load();
+
+    void Save();
+  }
 }
