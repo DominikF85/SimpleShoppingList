@@ -9,7 +9,7 @@
   <MasterDetailPage.Detail>
     <NavigationPage>
       <x:Arguments>
-        <pages:MainPageDetail BindingContext="{Binding}" />
+        <pages:StartPageView BindingContext="{Binding}" />
       </x:Arguments>
     </NavigationPage>
   </MasterDetailPage.Detail>
