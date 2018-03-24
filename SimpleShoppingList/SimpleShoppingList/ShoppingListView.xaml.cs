@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace DF.ShoppingList
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPageDetail : ContentPage
+    public partial class ShoppingListView : ContentPage
     {
-        public MainPageDetail()
+        public ShoppingListView()
         {
             InitializeComponent();
         }

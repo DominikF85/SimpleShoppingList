@@ -21,6 +21,9 @@
     <Compile Update="MainMenuMasterDetailPageMenuItem.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ShoppingListView.xaml.cs">
+      <DependentUpon>ShoppingListView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -30,10 +33,13 @@
     <EmbeddedResource Update="MainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="MainPageDetail.xaml">
+    <EmbeddedResource Update="ShoppingListView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MainPageMaster.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="StartPageView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
