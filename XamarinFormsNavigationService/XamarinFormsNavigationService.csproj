@@ -2,12 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>DF.XamarinFormsNavigationService</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DataModel.Contracts\DataModel.Contracts.csproj" />
-    <ProjectReference Include="..\DataModel.SQLite\DataModel.SQLite.csproj" />
-    <ProjectReference Include="..\NotifyPropertyChangedBase\NotifyPropertyChangedBase.csproj" />
+    <ProjectReference Include="..\ShoppingListVM\ShoppingListVM.csproj" />
     <ProjectReference Include="..\XamarinFormsNavigationService.Contracts\XamarinFormsNavigationService.Contracts.csproj" />
   </ItemGroup>
 

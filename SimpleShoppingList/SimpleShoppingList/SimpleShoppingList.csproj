@@ -12,6 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\DataModel.SQLite\DataModel.SQLite.csproj" />
     <ProjectReference Include="..\..\ShoppingListVM\ShoppingListVM.csproj" />
+    <ProjectReference Include="..\..\XamarinFormsNavigationService\XamarinFormsNavigationService.csproj" />
   </ItemGroup>
 
   <ItemGroup>

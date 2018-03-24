@@ -1,4 +1,5 @@
 ﻿using DataModel.SQLite;
+using DF.XamarinFormsNavigationService.Contracts;
 using KEB.Utilities.NotifyPropertyChanged;
 
 namespace ShoppingListVM
@@ -7,13 +8,14 @@ namespace ShoppingListVM
   {
     private ShoppingListVM _selectedList;
 
-    public ShoppingListAppMainVM()
+    public ShoppingListAppMainVM(INavigationService navigationService)
     {
+      NavigationService = navigationService;
       var db = new ShoppingListDB();
       ShoppingListManager = new ShoppingListManager(db);
     }
 
-    public string AppTitle { get; } = "ShoppingListApp";
+    public string AppTitle { get; } = "Einkaufszettel-App!";
 
     public ShoppingListManager ShoppingListManager { get; }
 
@@ -22,5 +24,6 @@ namespace ShoppingListVM
       get { return _selectedList; }
       set { SetProperty(ref _selectedList, value); }
     }
+    public INavigationService NavigationService { get; }
   }
 }

@@ -1,4 +1,8 @@
-﻿using ShoppingListVM;
+﻿using System;
+using System.Collections.Generic;
+using DF.XamarinFormsNavigationService;
+using DF.XamarinFormsNavigationService.Contracts;
+using ShoppingListVM;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +15,15 @@ namespace DF.ShoppingList
     {
       InitializeComponent();
 
-      BindingContext = new ShoppingListAppMainVM();
+      INavigationService navigationService = new NavigationService();
+      Dictionary<Type, Page> viewModelMapping = new Dictionary<Type, Page>()
+      {
+        {typeof(ShoppingListAppMainVM), new StartPageView() },
+        {typeof(ShoppingListVM.ShoppingListVM), new ShoppingListView()}
+      };
+      navigationService.Init(Navigation, viewModelMapping);
+
+      BindingContext = new ShoppingListAppMainVM(navigationService);
     }
   }
 }
