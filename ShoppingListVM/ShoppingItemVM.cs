@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using DF.ShoppingList.DataModel.Contracts;
+﻿using DF.ShoppingList.DataModel.Contracts;
 using KEB.Utilities.NotifyPropertyChanged;
 
 namespace ShoppingListVM
@@ -24,5 +21,6 @@ namespace ShoppingListVM
         NotifyChanged();
       }
     }
+
   }
 }

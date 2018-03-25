@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using DF.ShoppingList.DataModel.Contracts;
 using SQLite;
 
@@ -10,7 +11,11 @@ namespace DataModel.SQLite
     [PrimaryKey, AutoIncrement]
     public int Id { get; set; }
 
-    private List<ShoppingItem> SQliteStorageItems { get; set; }
+    private List<ShoppingItem> SQliteStorageItems
+    {
+      get { return Items.OfType<ShoppingItem>().ToList(); }
+      set { Items = new List<IShoppingItem>(value); }
+    }
 
     #region Implementation of IShoppingList
 
@@ -19,7 +24,12 @@ namespace DataModel.SQLite
     public DateTime ScheduledDate { get; set; }
 
     [Ignore]
-    public ICollection<IShoppingItem> Items { get; set; }
+    public ICollection<IShoppingItem> Items { get; set; } = new List<IShoppingItem>();
+
+    public IShoppingItem CreateNewItem()
+    {
+      return new ShoppingItem() { ItemName = "???" };
+    }
 
     #endregion
   }

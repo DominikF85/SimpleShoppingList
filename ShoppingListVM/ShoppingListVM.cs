@@ -1,28 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.ObjectModel;
+using System.Linq;
+using System.Windows.Input;
 using DF.ShoppingList.DataModel.Contracts;
 using KEB.Utilities.NotifyPropertyChanged;
+using Xamarin.Forms;
 
 namespace ShoppingListVM
 {
-    public class ShoppingListVM: NPCBase
+  public class ShoppingListVM : NPCBase
+  {
+    private readonly IShoppingList _model;
+
+    public ShoppingListVM(IShoppingList model)
     {
-      private readonly IShoppingList _model;
-
-      public ShoppingListVM(IShoppingList model)
+      _model = model;
+      AddItemCommand = new Command(() =>
       {
-        _model = model;
-      }
+        IShoppingItem newItem = _model.CreateNewItem();
+        _model.Items.Add(newItem);
+        Items.Add(new ShoppingItemVM(newItem));
+      });
 
-      public string Name
+      Items = new ObservableCollection<ShoppingItemVM>(model.Items.Select(modelItem => new ShoppingItemVM(modelItem)));
+    }
+
+    public string Name
+    {
+      get { return _model.Name; }
+      set
       {
-        get { return _model.Name;}
-        set
-        {
-          _model.Name = value;
-          NotifyChanged();
-        }
+        _model.Name = value;
+        NotifyChanged();
       }
     }
+
+    public ICommand AddItemCommand { get; }
+
+    public ObservableCollection<ShoppingItemVM> Items { get; }
+  }
 }

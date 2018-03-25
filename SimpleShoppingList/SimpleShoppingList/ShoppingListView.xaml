@@ -2,10 +2,24 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DF.ShoppingList.ShoppingListView"
-             Title="{Binding SelectedList.Name}">
+             Title="{Binding SelectedList.Name}"
+             BindingContext="{Binding SelectedList}">
   <StackLayout Padding="10">
-    <Label Text="{Binding SelectedList.Name}"/>
-    <Label BackgroundColor="DarkGray"/>
-    <!--<ListView/>-->
+    <Label Text="{Binding Name}"/>
+    <Label BackgroundColor="DarkGray" HeightRequest="5"/>
+    <ListView ItemsSource="{Binding Items}" >
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Orientation="Horizontal">
+              <Entry Text="{Binding Name}" HorizontalOptions="FillAndExpand"/>
+              <Button Text="✓" HorizontalOptions="End"/>
+              <Button  Text="X" HorizontalOptions="End"/>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <Button Text="+" Command="{Binding AddItemCommand}"/>
   </StackLayout>
 </ContentPage>
