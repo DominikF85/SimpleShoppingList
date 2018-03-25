@@ -7,6 +7,7 @@ namespace DataModel.SQLite
     #region Implementation of IShoppingItem
 
     public string ItemName { get; set; }
+    public bool IsPurchased { get; set; }
 
     #endregion
   }

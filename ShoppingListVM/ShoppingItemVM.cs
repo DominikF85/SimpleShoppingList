@@ -1,5 +1,7 @@
-﻿using DF.ShoppingList.DataModel.Contracts;
+﻿using System.Windows.Input;
+using DF.ShoppingList.DataModel.Contracts;
 using KEB.Utilities.NotifyPropertyChanged;
+using Xamarin.Forms;
 
 namespace ShoppingListVM
 {
@@ -10,6 +12,13 @@ namespace ShoppingListVM
     public ShoppingItemVM(IShoppingItem model)
     {
       _model = model;
+
+      TogglePurchasedCommand = new Command(() => togglePurchased());
+    }
+
+    private void togglePurchased()
+    {
+      IsPurchased = !IsPurchased;
     }
 
     public string Name
@@ -21,6 +30,18 @@ namespace ShoppingListVM
         NotifyChanged();
       }
     }
+
+    public bool IsPurchased
+    {
+      get { return _model.IsPurchased; }
+      set
+      {
+        _model.IsPurchased = value;
+        NotifyChanged();
+      }
+    }
+
+    public ICommand TogglePurchasedCommand { get; }
 
   }
 }

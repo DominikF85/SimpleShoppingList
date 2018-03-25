@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DF.ShoppingList.ShoppingListView"
-             Title="{Binding SelectedList.Name}"
+             Title="{Binding Name}"
              BindingContext="{Binding SelectedList}">
   <StackLayout Padding="10">
     <Label Text="{Binding Name}"/>
@@ -12,8 +12,15 @@
         <DataTemplate>
           <ViewCell>
             <StackLayout Orientation="Horizontal">
-              <Entry Text="{Binding Name}" HorizontalOptions="FillAndExpand"/>
-              <Button Text="✓" HorizontalOptions="End"/>
+              <Grid HorizontalOptions="FillAndExpand">
+                <Entry Text="{Binding Name}" />
+                <BoxView HeightRequest="2"
+                         VerticalOptions="Center"
+                         Opacity="0.5"
+                         Color="DarkRed" 
+                         IsVisible="{Binding IsPurchased}"/>
+              </Grid>
+              <Button Text="✓" HorizontalOptions="End" Command="{Binding TogglePurchasedCommand}"/>
               <Button  Text="X" HorizontalOptions="End"/>
             </StackLayout>
           </ViewCell>
