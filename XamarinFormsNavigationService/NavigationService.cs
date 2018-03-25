@@ -8,20 +8,31 @@ namespace DF.XamarinFormsNavigationService
 {
   public class NavigationService : INavigationService
   {
-    private IDictionary<Type, Page> _viewModelMapping;
+    private Dictionary<Type, Page> _viewModelMapping = new Dictionary<Type, Page>();
+    private Action _closeSideMenuAction;
 
     #region Implementation of IViewModelNavigationHandler
 
-    public void Init(INavigation navigation, IDictionary<Type, Page> viewModelMapping)
+    public void Init(INavigation navigation, Action closeSideMenuAction)
     {
       Navigation = navigation;
-      _viewModelMapping = viewModelMapping;
+      _closeSideMenuAction = closeSideMenuAction;
+    }
+
+    public void RegisterMapping(Type viewModelType, Page navigationTarget)
+    {
+      _viewModelMapping.Add(viewModelType, navigationTarget);
     }
 
     public INavigation Navigation { get; private set; }
 
-    public async Task NavigateTo(Type viewModelType, bool modal)
+    public async Task NavigateTo(Type viewModelType, bool modal = false, bool closeSideMenu = true)
     {
+      if (closeSideMenu)
+      {
+        _closeSideMenuAction();
+      }
+
       if (modal)
       {
         await Navigation.PushModalAsync(GetPage(viewModelType));

@@ -1,6 +1,8 @@
-﻿using DataModel.SQLite;
+﻿using System.Windows.Input;
+using DataModel.SQLite;
 using DF.XamarinFormsNavigationService.Contracts;
 using KEB.Utilities.NotifyPropertyChanged;
+using Xamarin.Forms;
 
 namespace ShoppingListVM
 {
@@ -13,6 +15,9 @@ namespace ShoppingListVM
       NavigationService = navigationService;
       var db = new ShoppingListDB();
       ShoppingListManager = new ShoppingListManager(db);
+
+      CreateNewShoppingListCommand =
+        new Command(() => NavigationService.NavigateTo(typeof(CreateNewShoppingListPageVM), false));
     }
 
     public string AppTitle { get; } = "Einkaufszettel-App!";
@@ -24,6 +29,15 @@ namespace ShoppingListVM
       get { return _selectedList; }
       set { SetProperty(ref _selectedList, value); }
     }
+
+    public CreateNewShoppingListPageVM CreateNewShoppingListPageVM { get; }
+
     public INavigationService NavigationService { get; }
+
+    #region Commands
+
+    public ICommand CreateNewShoppingListCommand { get; }
+
+    #endregion
   }
 }

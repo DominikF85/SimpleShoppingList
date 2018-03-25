@@ -4,12 +4,15 @@
              x:Class="DF.ShoppingList.MainPageMaster"
              Title="Master">
   <StackLayout>
-    <Button Text="+"/>
+    <Button Text="+" 
+            Command="{Binding CreateNewShoppingListCommand}"/>
     <ListView x:Name="ShoppingListsListView"
               SeparatorVisibility="None"
               HasUnevenRows="true"
               ItemsSource="{Binding ShoppingListManager.ShoppingLists}"
-              SelectedItem="{Binding SelectedList}">
+              SelectedItem="{Binding SelectedList}"
+              ItemTapped="ShoppingListsListView_OnItemTapped"
+              >
       <ListView.Header>
         <Label BackgroundColor="CornflowerBlue"
               Grid.Column="1"

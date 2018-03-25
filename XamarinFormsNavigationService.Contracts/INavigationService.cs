@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -9,10 +8,12 @@ namespace DF.XamarinFormsNavigationService.Contracts
   {
     INavigation Navigation { get; }
 
-    Task NavigateTo(Type viewModelType, bool modal);
+    Task NavigateTo(Type viewModelType, bool modal = false, bool closeSideMenu = true);
 
     Page GetPage(Type viewModelType);
 
-    void Init(INavigation navigation, IDictionary<Type, Page> viewModelMapping);
+    void Init(INavigation navigation, Action afterNavigateCloseMenuAction);
+
+    void RegisterMapping(Type viewModelType, Page navigationTarget);
   }
 }

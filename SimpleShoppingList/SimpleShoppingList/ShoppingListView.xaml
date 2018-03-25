@@ -5,5 +5,7 @@
              Title="{Binding SelectedList.Name}">
   <StackLayout Padding="10">
     <Label Text="{Binding SelectedList.Name}"/>
+    <Label BackgroundColor="DarkGray"/>
+    <!--<ListView/>-->
   </StackLayout>
 </ContentPage>
